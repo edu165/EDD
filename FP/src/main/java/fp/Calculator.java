@@ -4,6 +4,7 @@ package fp;
 
 import sun.reflect.generics.reflectiveObjects.NotImplementedException;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class Calculator {
@@ -23,8 +24,22 @@ public class Calculator {
      * devuelve una lista con los n números de la serie de fibonacci.
      */
 	public static List<Integer> fibonacci(int n) {
-		throw  new NotImplementedException();
+		List<Integer> list = new ArrayList<Integer>();
+	
+		int anterior = 1;
+        int actual = 1;
+        list.add(actual);
+        int siguiente = 1;
+        for (int i = 1; i < n ; i++) {
+        	list.add(actual);
+        	siguiente = actual + anterior;
+            anterior = actual;
+            actual = siguiente;
+	  }
+        System.out.println(list);
+	    return list;
 	}
+	
 
 	/*
 	 * Escribir todos los números del number al 0 de step en step.
