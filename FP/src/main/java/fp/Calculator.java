@@ -47,16 +47,17 @@ public class Calculator {
 	 * Escribir todos los números del number al 0 de step en step.
 	 */
 	public static int[] stepThisNumber(int number, int step) {
+		
 		int[] lista;
-		//int resultado = 0;
 		int cont= 0;
 		String nueva="";
-		//step=-i
 		for(int i=number-step;i>0; i-=step){
-		//resultado=number-step;
 		nueva+=i;
-		 //number= resultado;
 		 cont++;
+		 //number= resultado;
+		 //resultado=number-step;
+		 //int resultado = 0;
+		 //step=-i
 		 //numero = Integer.parseInt(cadena) cadena= Integer.toString(numero);int i = Integer.parseInt(s);
        }
 		lista=new int[cont];
@@ -73,15 +74,75 @@ public class Calculator {
 	 * divisores que tiene.
 	 */
 	public static int[] divisors(int n) {
-		throw  new NotImplementedException();
+		if(n <1){
+			return null;
+			
+		}
+	
+		int cont= 0;
+		
+		for(int i = n ; i >0; i--) {
+		if(n % i == 0) {
+		      cont++;
+			 
+	       }
+		
+		}
+			int []divisores=new int[cont];
+			for(int i=1; i<=n; i++)
+				if(n % i == 0) {
+				cont--;
+				divisores[cont]=i;
+			}
+		
+		return divisores;
+	
 	}
 
 	/*
 	 * Toma como parámetros una cadena de caracteres y devuelve cierto si la cadena resulta ser un palíndromo
-	 palindrmo son las frases que se leen igual del dercho que del reves */
+	 palindrmo son las frases que se leen igual del dercho que del reves
+	 // Cadena de caracteres original a sustituir.
+    String original = "áàäéèëíìïóòöúùuñÁÀÄÉÈËÍÌÏÓÒÖÚÙÜÑçÇ";
+    // Cadena de caracteres ASCII que reemplazarán los originales.
+    String ascii = "aaaeeeiiiooouuunAAAEEEIIIOOOUUUNcC";
+    String output = input;
+    for (int i=0; i<original.length(); i++) {
+        // Reemplazamos los caracteres especiales.
+        output = output.replace(original.charAt(i), ascii.charAt(i));
+    }//for i
+    return output;
+}//reemplazarCaracteresRaros */
 	public static boolean checkIsPalindrome(String cadena) {
-		throw  new NotImplementedException();
+		if (cadena == null){
+			return false;
+			
+		}
+		cadena=cadena.toLowerCase();
+		   String cadena2="";
+		   String acentos = "áàäéèëíìïóòöúùuñÁÀÄÉÈËÍÌÏÓÒÖÚÙÜÑçÇ";
+		    String sinacentos = "aaaeeeiiiooouuunAAAEEEIIIOOOUUUNcC";
+		     for(int i=0; i< cadena.length(); i++){
+		    	 if (Character.isLetter(cadena.charAt(i))){
+		    	 if( acentos.indexOf(cadena.charAt(i)) != -1)
+		    		 cadena2 +=sinacentos.charAt(acentos.indexOf(cadena.charAt(i)));
+		    	 else 
+		    		 cadena2+=cadena.charAt(i);
+		    	 }
+		    	 
+		    	 
+		    }
+		      
+		     for (int i= 0, j=cadena2.length()-1;  i  <cadena2.length()/2; i++, j--) {        
+		       if ( cadena2.charAt(i) != cadena2.charAt(j) ) 
+		    	   
+		    	   return false;
+		           
+		      }
+		     return true;
 	}
+		 
+	
 
 	/*
 	 * Pedir un número de 0 a 99 y mostrarlo escrito. Por ejemplo, para 56
@@ -93,7 +154,7 @@ public class Calculator {
 
 	/*
 	 * este metodo devuelve cierto si el año de la fecha es bisiesto fecha
-	 * dd-MM-yyyy es a�o bisieto que sea divisble entre 400 y divisible entre 4 y no entre 100
+	 * dd-MM-yyyy es a�o bisieto que sea divisble entre 400 y divisible entre 4 y no entre 100
 	 */
 	public static boolean isLeapYear(String fecha) {
 		throw  new NotImplementedException();
