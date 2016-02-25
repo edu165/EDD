@@ -10,6 +10,8 @@ import java.util.List;
 public class Calculator {
 
 
+	private static int resultado;
+
 	/*
      * este metodo devuelve el Class del object que le pasamos
      */
@@ -45,9 +47,27 @@ public class Calculator {
 	 * Escribir todos los números del number al 0 de step en step.
 	 */
 	public static int[] stepThisNumber(int number, int step) {
-		throw  new NotImplementedException();
+		int[] lista;
+		//int resultado = 0;
+		int cont= 0;
+		String nueva="";
+		//step=-i
+		for(int i=number-step;i>0; i-=step){
+		//resultado=number-step;
+		nueva+=i;
+		 //number= resultado;
+		 cont++;
+		 //numero = Integer.parseInt(cadena) cadena= Integer.toString(numero);int i = Integer.parseInt(s);
+       }
+		lista=new int[cont];
+		for(int n=0;n<cont; n++){
+			lista[n]=(nueva.charAt(n)-'0');
+			
+			
 		}
-
+		
+	return lista  ;
+}
 	/*
 	 * Módulo al que se le pasa un número entero del 0 al 20 y devuelve los
 	 * divisores que tiene.
@@ -58,7 +78,7 @@ public class Calculator {
 
 	/*
 	 * Toma como parámetros una cadena de caracteres y devuelve cierto si la cadena resulta ser un palíndromo
-	 */
+	 palindrmo son las frases que se leen igual del dercho que del reves */
 	public static boolean checkIsPalindrome(String cadena) {
 		throw  new NotImplementedException();
 	}
@@ -73,14 +93,14 @@ public class Calculator {
 
 	/*
 	 * este metodo devuelve cierto si el año de la fecha es bisiesto fecha
-	 * dd-MM-yyyy
+	 * dd-MM-yyyy es a�o bisieto que sea divisble entre 400 y divisible entre 4 y no entre 100
 	 */
 	public static boolean isLeapYear(String fecha) {
 		throw  new NotImplementedException();
 	}
 
 	/*
-	 * este metodo devuelve cierto si la fecha es válida
+	 * este metodo devuelve cierto si la fecha es válida 
 	 */
 	public static boolean isValidDate(String date) {
 		throw  new NotImplementedException();
