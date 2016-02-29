@@ -147,9 +147,34 @@ public class Calculator {
 	/*
 	 * Pedir un número de 0 a 99 y mostrarlo escrito. Por ejemplo, para 56
 	 * mostrar: cincuenta y seis
+
+	 */
+	/*
+	 * 
 	 */
 	public static String speakToMe(int n) {
-		throw  new NotImplementedException();
+		String cadena="";
+String [] unidades={"Cero","uno","dos","tres","cuatro","cinco","seis","siete", "ocho","nueve","Diez","Once","Doce","Trece","Catorce","Quince","Dieciseis", "Diecisiete","Dieciocho","Diecinueve"};
+String[] decenas = {"Cero","Diez","Veinte","Treinta","Cuarenta","Cincuenta",  "Sesenta","Setenta","Ochenta","Noventa"};
+if (n==0){
+	  cadena="";
+	 cadena=unidades[0];
+	}
+if(n<20){
+	  cadena="";
+	cadena=unidades[n];
+}
+else if((n%10)==0){
+			  cadena="";
+			  cadena=decenas[n/10];
+			  
+		  }
+		  else{
+			  cadena="";
+			  cadena=decenas[n/10]+" y "+unidades[n%10];
+			  
+		  }
+ return cadena;
 	}
 
 	/*
