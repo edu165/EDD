@@ -182,9 +182,22 @@ else if((n%10)==0){
 	 * dd-MM-yyyy es a�o bisieto que sea divisble entre 400 y divisible entre 4 y no entre 100
 	 */
 	public static boolean isLeapYear(String fecha) {
-		throw  new NotImplementedException();
+		int año;
+			try {
+					año = Integer.parseInt(fecha.substring(6));
+				}catch (NumberFormatException e) {
+					return false;
+				}catch(IndexOutOfBoundsException i){
+					return false;
+				}
+			if ((año % 4 == 0) && ((año % 100 != 0) || (año % 400 == 0))){
+	 			return true;
+	 		}
+	 			
+	 		else{
+	 			return false;
+	 		}
 	}
-
 	/*
 	 * este metodo devuelve cierto si la fecha es válida 
 	 */
