@@ -9,18 +9,13 @@ public class Calculator {
 
 	private static int resultado;
 
-	/*
-	 * este metodo devuelve el Class del object que le pasamos
-	 */
 	public static Class classTypeOf(Object x) {
 
 		return x.getClass();
 		// throw new NotImplementedException();
 	}
 
-	/*
-	 * devuelve una lista con los n números de la serie de fibonacci.
-	 */
+	
 	public static List<Integer> fibonacci(int n) {
 		List<Integer> list = new ArrayList<Integer>();
 
@@ -38,9 +33,6 @@ public class Calculator {
 		return list;
 	}
 
-	/*
-	 * Escribir todos los números del number al 0 de step en step.
-	 */
 	public static int[] stepThisNumber(int number, int step) {
 
 		int[] lista;
@@ -49,12 +41,7 @@ public class Calculator {
 		for (int i = number - step; i > 0; i -= step) {
 			nueva += i;
 			cont++;
-			// number= resultado;
-			// resultado=number-step;
-			// int resultado = 0;
-			// step=-i
-			// numero = Integer.parseInt(cadena) cadena=
-			// Integer.toString(numero);int i = Integer.parseInt(s);
+			
 		}
 		lista = new int[cont];
 		for (int n = 0; n < cont; n++) {
@@ -65,10 +52,7 @@ public class Calculator {
 		return lista;
 	}
 
-	/*
-	 * Módulo al que se le pasa un número entero del 0 al 20 y devuelve los
-	 * divisores que tiene.
-	 */
+	
 	public static int[] divisors(int n) {
 		if (n < 1) {
 			return null;
@@ -93,11 +77,7 @@ public class Calculator {
 
 	}
 
-	/*
-	 * Toma como parámetros una cadena de caracteres y devuelve cierto si la
-	 * cadena resulta ser un palíndromo palindrmo son las frases que se leen
-	 * igual del dercho que del reves
-	 */
+	
 	public static boolean checkIsPalindrome(String cadena) {
 		if (cadena == null) {
 			return false;
@@ -126,14 +106,7 @@ public class Calculator {
 		return true;
 	}
 
-	/*
-	 * Pedir un número de 0 a 99 y mostrarlo escrito. Por ejemplo, para 56
-	 * mostrar: cincuenta y seis
-	 * 
-	 */
-	/*
-	 * 
-	 */
+	
 	public static String speakToMe(int n) {
 		String cadena = "";
 		String[] unidades = { "Cero", "uno", "dos", "tres", "cuatro", "cinco", "seis", "siete", "ocho", "nueve", "Diez",
@@ -147,11 +120,12 @@ public class Calculator {
 		if (n < 20) {
 			cadena = "";
 			cadena = unidades[n];
-		} else if ((n % 10) == 0) {
+		}
+		if (n % 10== 0) {
 			cadena = "";
 			cadena = decenas[n / 10];
 
-		} else {
+		} {
 			cadena = "";
 			cadena = decenas[n / 10] + " y " + unidades[n % 10];
 
@@ -159,11 +133,7 @@ public class Calculator {
 		return cadena;
 	}
 
-	/*
-	 * este metodo devuelve cierto si el año de la fecha es bisiesto fecha
-	 * dd-MM-yyyy es a�o bisieto que sea divisble entre 400 y divisible entre 4
-	 * y no entre 100
-	 */
+	
 	public static boolean isLeapYear(String fecha) {
 		int año;
 		try {
@@ -182,9 +152,7 @@ public class Calculator {
 		}
 	}
 
-	/*
-	 * este metodo devuelve cierto si la fecha es válida
-	 */
+	
 	public static boolean isValidDate(String date) {
 
 		int dia;
